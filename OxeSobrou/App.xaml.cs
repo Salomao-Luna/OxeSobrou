@@ -1,4 +1,6 @@
-﻿namespace OxeSobrou
+﻿using OxeSobrou.Views;
+
+namespace OxeSobrou
 {
     public partial class App : Application
     {

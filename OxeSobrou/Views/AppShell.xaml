@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="OxeSobrou.Views.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Pages="clr-namespace:OxeSobrou.Views"
+    Title="Oxe, Sobrou!"
+    Shell.TabBarIsVisible="False">
+
+    <Shell.FlyoutHeader>
+        <Label HorizontalTextAlignment="Center" Text="Menu" />
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Resumo"
+            ContentTemplate="{DataTemplate Pages:ResumePage}"
+            Route="ResumePage" />
+
+        <ShellContent
+            Title="Informações"
+            ContentTemplate="{DataTemplate Pages:InfoPage}"
+            Route="InfoPage" />
+    </FlyoutItem>
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+
+            <Grid Grid.Row="1" Margin="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Rectangle
+                    BackgroundColor="Black"
+                    HeightRequest="2"
+                    HorizontalOptions="FillAndExpand" />
+                <Label Grid.Row="1" Text="Tema:" />
+                <RadioButton Grid.Row="2" GroupName="Theme" Content="Light"/>
+                <RadioButton Grid.Row="3" GroupName="Theme" Content="Dark"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+</Shell>
