@@ -71,13 +71,28 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\AppShell.xaml">
+	  <Compile Update="Views\Pages\YearSummaryPage.xaml.cs">
+	    <DependentUpon>YearSummaryPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Pages\MonthSummaryPage.xaml.cs">
+	    <DependentUpon>MonthSummaryPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\Pages\ControlCreationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\InfoPage.xaml">
+	  <MauiXaml Update="Views\Pages\YearSummaryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ResumePage.xaml">
+	  <MauiXaml Update="Views\Pages\MonthSummaryPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Shells\AppShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Pages\InfoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

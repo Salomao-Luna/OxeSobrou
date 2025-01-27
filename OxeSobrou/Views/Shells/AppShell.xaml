@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Shell
-    x:Class="OxeSobrou.Views.AppShell"
+    x:Class="OxeSobrou.Views.Shells.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:Pages="clr-namespace:OxeSobrou.Views"
+    xmlns:Pages="clr-namespace:OxeSobrou.Views.Pages"
     Title="Oxe, Sobrou!"
+    Shell.NavBarHasShadow="True"
     Shell.TabBarIsVisible="False">
 
     <Shell.FlyoutHeader>
         <Label HorizontalTextAlignment="Center" Text="Menu" />
     </Shell.FlyoutHeader>
-
+  
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent
-            Title="Resumo"
-            ContentTemplate="{DataTemplate Pages:ResumePage}"
-            Route="ResumePage" />
 
-        <ShellContent
+        
+        <Tab Title="Resumo" Route="Summary">
+           
+            <ShellContent
+                Title="Resumo Anual"
+                ContentTemplate="{DataTemplate Pages:YearSummaryPage}"
+                Route="YearSummaryPage" />
+
+            <ShellContent
+                Title="Resumo Mensal"
+                ContentTemplate="{DataTemplate Pages:MonthSummaryPage}"
+                Route="MonthSummaryPage" />
+        </Tab>
+        
+    <ShellContent
             Title="Informações"
             ContentTemplate="{DataTemplate Pages:InfoPage}"
             Route="InfoPage" />
@@ -38,8 +49,14 @@
                     HeightRequest="2"
                     HorizontalOptions="FillAndExpand" />
                 <Label Grid.Row="1" Text="Tema:" />
-                <RadioButton Grid.Row="2" GroupName="Theme" Content="Light"/>
-                <RadioButton Grid.Row="3" GroupName="Theme" Content="Dark"/>
+                <RadioButton
+                    Grid.Row="2"
+                    Content="Light"
+                    GroupName="Theme" />
+                <RadioButton
+                    Grid.Row="3"
+                    Content="Dark"
+                    GroupName="Theme" />
             </Grid>
         </DataTemplate>
     </Shell.FlyoutFooterTemplate>

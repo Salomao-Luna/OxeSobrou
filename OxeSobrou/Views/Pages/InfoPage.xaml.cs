@@ -1,4 +1,4 @@
-namespace OxeSobrou.Views;
+namespace OxeSobrou.Views.Pages;
 
 public partial class InfoPage : ContentPage
 {

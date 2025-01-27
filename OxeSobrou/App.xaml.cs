@@ -1,4 +1,4 @@
-﻿using OxeSobrou.Views;
+﻿using OxeSobrou.Views.Shells;
 
 namespace OxeSobrou
 {

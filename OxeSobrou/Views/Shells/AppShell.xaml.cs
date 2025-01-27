@@ -1,4 +1,4 @@
-namespace OxeSobrou.Views;
+namespace OxeSobrou.Views.Shells;
 
 public partial class AppShell : Shell
 {
