@@ -11,24 +11,19 @@
     <Shell.FlyoutHeader>
         <Label HorizontalTextAlignment="Center" Text="Menu" />
     </Shell.FlyoutHeader>
-  
+
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Resumo"
+            ContentTemplate="{DataTemplate Pages:SummaryPage}"
+            Route="SummaryPage" />
 
-        
-        <Tab Title="Resumo" Route="Summary">
-           
-            <ShellContent
-                Title="Resumo Anual"
-                ContentTemplate="{DataTemplate Pages:YearSummaryPage}"
-                Route="YearSummaryPage" />
+        <ShellContent
+            Title="Criar Controle"
+            ContentTemplate="{DataTemplate Pages:ControlCreationPage}"
+            Route="ControlCreationPage" />
 
-            <ShellContent
-                Title="Resumo Mensal"
-                ContentTemplate="{DataTemplate Pages:MonthSummaryPage}"
-                Route="MonthSummaryPage" />
-        </Tab>
-        
-    <ShellContent
+        <ShellContent
             Title="Informações"
             ContentTemplate="{DataTemplate Pages:InfoPage}"
             Route="InfoPage" />

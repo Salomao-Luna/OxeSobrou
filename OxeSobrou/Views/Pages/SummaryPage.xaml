@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="OxeSobrou.Views.Pages.SummaryPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:OxeSobrou.ViewModels"
+    Title="Resumo">
+    <ContentPage.BindingContext>
+        <vm:SummaryViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--#region Body-->
+        <Border
+            x:Name="PageContent"
+            Content="{Binding PageContent, Mode=OneWay}"
+            HorizontalOptions="Fill"
+            Stroke="Transparent"
+            VerticalOptions="Fill" />
+        <!--#endregion-->
+
+        <!--#region Footer-->
+        <Grid Grid.Row="1" VerticalOptions="End">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                Command="{Binding FirstButtonClickedCommand}"
+                CornerRadius="0"
+                Style="{StaticResource SummaryButtonsStyle}"
+                Text="Anual" />
+            <Border
+                Grid.Column="1"
+                Margin="1,12"
+                HorizontalOptions="Fill"
+                Stroke="Gray"
+                StrokeThickness="1"
+                WidthRequest="1" />
+            <Button
+                Grid.Column="2"
+                Command="{Binding SecondButtonClickedCommand}"
+                CornerRadius="0"
+                Style="{StaticResource SummaryButtonsStyle}"
+                Text="Mensal" />
+        </Grid>
+        <!--#endregion-->
+    </Grid>
+</ContentPage>
